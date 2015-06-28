@@ -6,8 +6,8 @@ class CreateDishes < ActiveRecord::Migration
       t.text :desc
       t.text :processing
       t.integer :food_id
-      t.integer :day_id
       t.integer :category_id
+      t.integer :user_id
       t.string :address
 
       t.timestamps null: false

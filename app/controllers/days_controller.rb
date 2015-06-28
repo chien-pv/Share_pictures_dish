@@ -29,10 +29,8 @@ class DaysController < ApplicationController
     respond_to do |format|
       if @day.save
         format.html { redirect_to @day, notice: 'Day was successfully created.' }
-        format.json { render :show, status: :created, location: @day }
       else
         format.html { render :new }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class DaysController < ApplicationController
     respond_to do |format|
       if @day.update(day_params)
         format.html { redirect_to @day, notice: 'Day was successfully updated.' }
-        format.json { render :show, status: :ok, location: @day }
       else
         format.html { render :edit }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,6 @@ class DaysController < ApplicationController
     @day.destroy
     respond_to do |format|
       format.html { redirect_to days_url, notice: 'Day was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

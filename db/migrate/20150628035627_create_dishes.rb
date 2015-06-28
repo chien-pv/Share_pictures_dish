@@ -9,7 +9,6 @@ class CreateDishes < ActiveRecord::Migration
       t.integer :category_id
       t.integer :user_id
       t.string :address
-
       t.timestamps null: false
     end
   end

@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20150628035627) do
     t.text     "desc",        limit: 65535
     t.text     "processing",  limit: 65535
     t.integer  "food_id",     limit: 4
-    t.integer  "day_id",      limit: 4
     t.integer  "category_id", limit: 4
+    t.integer  "user_id",     limit: 4
     t.string   "address",     limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dish.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@dish.image_url, :width => 600) if @dish.image.present? %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @dish.desc %>
+</p>
+
+<p>
+  <strong>Processing:</strong>
+  <%= @dish.processing %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @dish.food_id %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @dish.day_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @dish.category_id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @dish.address %>
+</p>
+
+<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Back', dishes_path %>

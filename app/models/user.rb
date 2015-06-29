@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
       User.find_by_id(params[:id]).update(name: params[:name], email: params[:email],role_id: params[:role_id])
     end
   end
+    def self.Them(params)
+    # binding.pry
+      User.new(name: params[:name], email: params[:email],role_id: params[:role_id],password: params[:password] )
+  end
 end

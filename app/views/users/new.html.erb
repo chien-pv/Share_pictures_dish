@@ -1,0 +1,28 @@
+<h2>new user</h2>
+<%= form_for @users, :url =>  users_create_path do |f|%> 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+   <br><%= f.label :Role %><br>
+  <%=f.collection_select :role_id, User.name_role_all, :id, :name%>
+  
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "New user" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_index_path %>

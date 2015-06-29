@@ -1,0 +1,31 @@
+<h1>List Users</h1>
+<div class="col-md-6">
+
+<table class="table table-bordered">
+<thead>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Email</td>
+<td>Role</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+<tr>
+<td><%= user.id %></td>
+<td><%= user.name %></td>
+<td><%= user.email %></td>
+<td><%= User.name_role(user.role_id) %></td>
+<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to 'Show', user %></td>
+<td><%= link_to 'Edit', edit_user_path(user.id) %></td>
+</tr>
+<%end%>
+</tbody>
+</table>
+<%= will_paginate @users %>
+</div>

@@ -13,7 +13,9 @@ class UsersController < ApplicationController
 
   def show
   end
-
+  def new
+   @users= User.new
+  end
   def edit
   end
   def update
@@ -26,13 +28,23 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  def create
+    @users = User.Them(user_params)
+    # binding.pry
+    respond_to do |format|
+      if @users.save
+        format.html { redirect_to users_index_path, notice: 'user was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
 
   def set_user
       @user = User.find(params[:id])
   end
   def user_params
-    params.require(:user).permit(:id, :name, :email, :role_id)
+    params.require(:user).permit(:id, :name, :email, :role_id, :password)
   end
   
 end

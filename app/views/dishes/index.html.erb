@@ -2,8 +2,8 @@
 
 <h1>Listing Dishes</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered">
+<thead>
     <tr>
       <th>Name</th>
       <th>Image</th>
@@ -33,7 +33,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @users %>
 <br>
 
 <%= link_to 'New Dish', new_dish_path %>

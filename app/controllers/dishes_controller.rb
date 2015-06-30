@@ -5,12 +5,12 @@ class DishesController < ApplicationController
   # GET /dishes.json
   def index
     @dishes = Dish.all
+    @dishes=@dishes.paginate(:page => params[:page], :per_page  => 5)
   end
 
   # GET /dishes/1
   # GET /dishes/1.json
   def show
-  @commend = Commend.new
   end
 
   # GET /dishes/new
@@ -25,7 +25,7 @@ class DishesController < ApplicationController
   # POST /dishes
   # POST /dishes.json
   def create
-    binding.pry
+    # binding.pry
     @dish = Dish.new(dish_params)
 
     respond_to do |format|

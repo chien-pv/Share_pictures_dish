@@ -1,5 +1,16 @@
 <h2>new user</h2>
 <%= form_for @users, :url =>  users_create_path do |f|%> 
+  <% if @users.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@users.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @users.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

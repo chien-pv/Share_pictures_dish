@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def update
     # binding.pry
     respond_to do |format|
-      if User.xu_ly_edit(user_params)
+      if @user.update(name: user_params[:name], email: user_params[:email],role_id: user_params[:role_id])
         format.html { redirect_to @user, notice: 'user was successfully updated.' }
       else
         format.html { render :edit }
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       if @users.save
         format.html { redirect_to users_index_path, notice: 'user was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render :new}
       end
     end
   end

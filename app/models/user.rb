@@ -7,12 +7,6 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :role
 
-  def self.name_role(id)
-    Role.find_by_id(id).name
-  end
-  def self.name_role_all
-    Role.all
-  end
   def self.xu_ly_edit(params)
     # binding.pry
     if User.find_by_id(params[:id])

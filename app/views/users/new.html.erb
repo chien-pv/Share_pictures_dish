@@ -10,7 +10,7 @@
   </div>
 
    <br><%= f.label :Role %><br>
-  <%=f.collection_select :role_id, User.name_role_all, :id, :name%>
+  <%=f.collection_select :role_id, Role.name_role_all, :id, :name%>
   
   <div class="field">
     <%= f.label :password %>

@@ -30,11 +30,20 @@
   </div>
   <div class="field">
     <%= f.label :food_id %><br>
-    <%= f.number_field :food_id %>
+    <%=f.collection_select :food_id, Dish.list_foods, :id, :food_name%>
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%=f.collection_select :category_id, Dish.list_categories, :id, :name%>
+  </div>
+  <div>
+   <%= f.label :Buoi %><br>
+    <%= f.collection_check_boxes(:id, Day.all, :id, :day_name) do |b| %>
+    <%= b.label(class: "check_box") do %>
+      <%= b.check_box %>
+      <%= b.object.day_name %>
+      <% end %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :address %><br>

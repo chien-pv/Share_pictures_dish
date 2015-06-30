@@ -19,7 +19,7 @@
 <td><%= user.id %></td>
 <td><%= user.name %></td>
 <td><%= user.email %></td>
-<td><%= User.name_role(user.role_id) %></td>
+<td><%= Role.name_role(user.role_id) %></td>
 <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <td><%= link_to 'Show', user %></td>
 <td><%= link_to 'Edit', edit_user_path(user.id) %></td>

@@ -6,4 +6,10 @@ class Dish < ActiveRecord::Base
   has_many :dishs_day
   has_many :days, through: :dishs_day
   belongs_to :user
+  def self.list_foods
+    Food.all
+  end
+  def self.list_categories
+    Category.all
+  end
 end

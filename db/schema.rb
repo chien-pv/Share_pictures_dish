@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150628035627) do
 
   create_table "dishes", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.string   "image",       limit: 255
+    t.text     "image",       limit: 65535
     t.text     "desc",        limit: 65535
     t.text     "processing",  limit: 65535
     t.integer  "food_id",     limit: 4

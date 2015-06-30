@@ -25,7 +25,7 @@ class DishesController < ApplicationController
   # POST /dishes
   # POST /dishes.json
   def create
-    # binding.pry
+    binding.pry
     @dish = Dish.new(dish_params)
 
     respond_to do |format|

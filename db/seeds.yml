@@ -1,0 +1,174 @@
+roles_list:
+- 
+  name: admin
+
+- 
+  name: user
+
+food_list:
+- 
+  food_name: thit
+
+- 
+  food_name: ca
+
+-
+  food_name: rau
+
+-
+  food_name: hai san
+
+-
+  food_name: trung
+
+day_list:
+- 
+  day_name: sang
+
+- 
+  day_name: trua
+
+-
+  day_name: chieu
+
+-
+  day_name: toi
+
+-
+  day_name: khuya
+
+user_list:
+- 
+  name: chuong
+  email: chuong@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: phuc
+  email: phuc@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: luong
+  email: luong@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: tien
+  email: tien@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: son
+  email: son@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: chien
+  email: chien@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: duydy
+  email: duydy@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: messi
+  email: messi@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: ronaldo
+  email: ronaldo@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: congphuong
+  email: congphuong@gmail.com
+  password: 12345678
+  role_id: 2
+
+category_list:
+- 
+  name: xao
+
+- 
+  name: nau
+
+-
+  name: kho
+
+- 
+  name: nuong
+
+- 
+  name: hap
+
+- 
+  name: ham
+
+- 
+  name: chien
+
+-
+  name: tuoi song
+
+dish_list:
+- 
+  name: Bo xao la lot
+  desc: Bo xao la lot
+  processing: |-
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: Uhot.png
+
+- 
+  name: Tôm chiên sốt chua ngọt|
+  desc: Thỉnh thoảng chị em hãy đổi vị làm món tôm chiên sốt chua ngọt để cả nhà thưởng thức xem sao nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: Uhot.png
+
+- 
+  name: Mì trộn thịt gà cả nhà đều mê
+  desc: Món mì trộn thịt gà thanh mát dễ ăn chắc chắn ai cũng sẽ thích khi thưởng thức.
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: Uhot.png
+
+- 
+  name: Hoa bí nhồi tôm cá chiên giòn
+  desc:  Cuối tuần chị em hãy thử làm món hoa bí nhồi tôm cá rồi chiên giòn cho cả nhà thưởng thức nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: Uhot.png
+
+commend_list:
+-
+  comment: Khong the tin noi
+
+-
+  comment: That tuyet voi!
+
+-
+  comment: Khong the tin noi
+
+-
+  comment: That tuyet voi!

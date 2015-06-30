@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   get 'users/index'
 
-  resources :dishes
+  resources :dishes do
+    resources :commends
+  end 
+
   devise_for :users
   resources :foods
   resources :days
   resources :categories
   resources :users
+  # resources :commends
+  post "commends/create", to:"commends#create" 
 
   post "users/create", to: "users#create"
   # The priority is based upon order of creation: first created -> highest priority.

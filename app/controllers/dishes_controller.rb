@@ -10,6 +10,7 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.json
   def show
+  @commend = Commend.new
   end
 
   # GET /dishes/new

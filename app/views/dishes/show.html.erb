@@ -35,5 +35,24 @@
   <%= @dish.address %>
 </p>
 
-<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<h2>Comments</h2>
+<% @dish.commends.each do |comment| %>
+  <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
+  <%= comment.comment %><br>
+  <% if current_user.present?%>
+  <%= link_to 'Remove', [@dish,comment], method: :delete, data: { confirm: 'Are you sure?' } if current_user.role_id==1 or current_user && current_user.id == comment.user_id %><br>
+  <%end%>
+<% end %>
+<% if current_user.present?%>
+  <h2>Add a comment:</h2>
+   <%= form_for([@dish, @dish.commends.build]) do |f| %>
+    <p>
+      <%= f.label :comment%><br>
+      <%= f.text_area :comment %>
+    </p>   
+    <p><%= f.submit %></p>
+  <% end %>
+<% else%>
+  <p><%= link_to "Please sign in to comment!", new_user_session_path%><p>
+<% end%>
 <%= link_to 'Back', dishes_path %>

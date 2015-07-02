@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :dishes do
     resources :commends
+    get :show_comment
   end 
-
+  get "/list_dish", to: "dishes#list_dish"
+  get "/post", to: "dishes#post_dish"
+  post "/post/new_post", to: "dishes#create_post"
   devise_for :users
   resources :foods
   resources :days

@@ -1,0 +1,46 @@
+
+
+ <section id="portfolio">
+        <div class="container">
+            <div class="center">
+               <h2>Portfolio</h2>
+               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+         
+
+
+            <ul class="portfolio-filter text-center">
+                <li><a class="btn btn-default active" href="#" data-filter="*">All Dish</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".1">Thịt</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".2">Cá</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".3">Rau</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".4">Hải Sản</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".5">Trứng</a></li>
+            </ul><!--/#portfolio-filter-->
+                <form id="searchbox" method="get" action="/list_dish">
+                <input id="inputsearch" name="q" type="text" size="15" placeholder="Type here..." />
+                <input id="button-submit" type="submit" value="Search" />
+                </form>
+                <br>
+            <div class="row">
+            <div class="portfolio-items">
+             <% @dishes.each do |dss|%>
+                <div class="portfolio-item <%=dss.food_id%> bootstrap col-xs-12 col-sm-4 col-md-3">
+                    <div class="recent-work-wrap">
+                        <img style="width: 300px; height:290px"  class="img-responsive" src="<%=dss.image%>" alt="s">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3><%= link_to dss.name, dish_show_comment_path(dss.id) %> </h3>
+                                <p><%=dss.desc%></p>
+                               <a class="preview" href="<%=dss.image.to_s%>" rel="prettyPhoto"> View</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>   
+             <%end%>
+             </div>
+                </div>
+            </div>
+        <div id="phantrang"><%= will_paginate @dishes %></div>
+        </div>
+    </section><!--/#portfolio-item-->

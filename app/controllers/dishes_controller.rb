@@ -13,13 +13,23 @@ class DishesController < ApplicationController
     @dishes=@dishes.paginate(:page => params[:page], :per_page  => 5)
   end
 
-  # GET /dishes/1
-  # GET /dishes/1.json
-  def show
+  def list_dish
+  if params[:q].blank?
+    @dishes = Dish.all
+  else 
+     @dishes = Dish.where("name LIKE '%#{params[:q]}%'")
+  end
+  @dishes=@dishes.paginate(:page => params[:page], :per_page  => 12)
+  end
+  def show_comment
+    @dish = Dish.find(params[:dish_id])
   end
 
   # GET /dishes/new
   def new
+    @dish = Dish.new
+  end
+  def post_dish
     @dish = Dish.new
   end
 
@@ -46,7 +56,23 @@ class DishesController < ApplicationController
       end
     end
   end
+  def create_post
+    # binding.pry
+    @dish = Dish.new(dish_params)
 
+    respond_to do |format|
+      if @dish.save
+          params[:dish][:id].each do |fa|
+          unless fa.blank? or fa.nil?
+            DishsDay.create(day_id: fa, dish_id: @dish.id)
+          end
+        end
+        format.html { redirect_to dish_show_comment_path(@dish.id), notice: 'Dish was successfully created.' }
+      else
+        format.html { render :post_dish }
+      end
+    end
+  end
   # PATCH/PUT /dishes/1
   # PATCH/PUT /dishes/1.json
   def update

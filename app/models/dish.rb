@@ -19,7 +19,8 @@ class Dish < ActiveRecord::Base
   end
   def self.list_dish_slide
     # Dish.find([1, 3]) 
-     Dish.find_by id: Random.rand(1...8)
+    all=Dish.all
+    return all[(Random.rand(all.length))]
   end
 
   def self.thuc_don

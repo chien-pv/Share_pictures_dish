@@ -16,3 +16,62 @@
  */
  thead{font-weight: bold;}
  #err{background: red}
+ #searchbox {
+    padding: 2px 5px;
+    width: 250px;
+    background:  #66CC66;
+    margin-left: 79%
+
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+#searchbox input {
+
+}
+
+#searchbox input[type="text"] {
+    background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/TyXhIfEIUy4/s1600/search-dark.png) no-repeat 10px 6px #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 55%;
+    padding: 8px 15px 8px 30px;
+}
+
+#button-submit {
+    background: #00FF66;
+    border-width: 0px;
+    padding: 9px 0px;
+    width: 43%%;
+    cursor: pointer;
+    font: bold 12px Arial, Helvetica;
+    color: #fff;
+    text-shadow: 0 1px 0 #555;
+}
+
+#button-submit:hover {
+    background: #4f5356;
+}
+
+#button-submit:active {
+    background: #5b5d60;
+    outline: none;
+}
+
+#button-submit::-moz-focus-inner {
+    border: 0;
+}
+#phantrang{padding-left: 80%}

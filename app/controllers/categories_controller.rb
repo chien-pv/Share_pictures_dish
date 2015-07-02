@@ -1,4 +1,8 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |exception|
+   redirect_to root_url, :alert => exception.message
+  end 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories

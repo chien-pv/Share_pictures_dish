@@ -31,10 +31,16 @@ class Ability
     user ||= User.new
     # binding.pry
     if user.islog?
-        can :manage, :all
+     # binding.pry
+        can :manage, :all if user.role.name == "admin"
+        can :post_dish, :all
+        can :show_comment, :all
+        can :create_post, :all
+        can :list_dish, :all
     else
-        can :read, :all
-        cannot :new , :user_id => user.id
+        can :show_comment, :all
+        can :list_dish, :all
+        # cannot :new , :user_id => user.id
 
     end
   end

@@ -26,14 +26,14 @@
         <td><%= dish.food_id %></td>
         <td><%= dish.category_id %></td>
         <td><%= dish.address %></td>
-        <td><%= link_to 'Show', dish %></td>
+        <td><%= link_to 'Show', dish_show_comment_path(dish.id) %></td>
         <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
         <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @users %>
+<%= will_paginate @dishes %>
 <br>
 
 <%= link_to 'New Dish', new_dish_path %>

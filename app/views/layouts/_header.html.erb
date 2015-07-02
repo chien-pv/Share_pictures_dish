@@ -81,19 +81,21 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><%= link_to 'Thêm món ăn', new_dish_path %></li>
+                        <li class="active"><%= link_to 'Trang Chủ', root_path %></li>
+                        <li><%= link_to 'Thêm món ăn', post_path %></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><%= link_to 'Danh sách món ăn', list_dish_path %></li>
+                    <% if current_user.present?&&(current_user.role_id==1)%>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản Lý</a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><%= link_to 'Danh sách user ', users_path %></li>
+                                <li><%= link_to 'Danh sách dishes ', dishes_path %></li>
+                                <li><%= link_to 'Danh sách categories ', categories_path %></li>
+                                <li><%= link_to 'Danh sách Thực Phẩm ', foods_path %></li>
                             </ul>
                         </li>
+                    <%end%>
                         <li><a href="blog.html">Blog</a></li> 
                         <li><a href="contact-us.html">Contact</a></li>                        
                     </ul>

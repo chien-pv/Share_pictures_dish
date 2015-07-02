@@ -26,7 +26,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'bower-rails'
 gem 'will_paginate'
-
+gem 'cancancan', '~> 1.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

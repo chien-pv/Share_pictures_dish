@@ -131,7 +131,8 @@ dish_list:
               12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
               115g tôm bóc vỏ, băm nhỏ
               100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
-  image: Uhot.png
+  image: 1/1.jpg
+  address: 154 nguyễn lương bằng
 
 - 
   name: Tôm chiên sốt chua ngọt|
@@ -140,7 +141,8 @@ dish_list:
               12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
               115g tôm bóc vỏ, băm nhỏ
               100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
-  image: Uhot.png
+  image: 2/2.jpg
+  address: 23 bach dang
 
 - 
   name: Mì trộn thịt gà cả nhà đều mê
@@ -149,7 +151,8 @@ dish_list:
               12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
               115g tôm bóc vỏ, băm nhỏ
               100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
-  image: Uhot.png
+  image: 3/3.jpg
+  address: 74 bach dang
 
 - 
   name: Hoa bí nhồi tôm cá chiên giòn
@@ -158,7 +161,48 @@ dish_list:
               12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
               115g tôm bóc vỏ, băm nhỏ
               100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
-  image: Uhot.png
+  image: 4/4.jpg
+  address: 10 bach dang
+
+- 
+  name: Hoa bí nhồi tôm cá chiên giòn
+  desc:  Cuối tuần chị em hãy thử làm món hoa bí nhồi tôm cá rồi chiên giòn cho cả nhà thưởng thức nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: 5/5.jpg
+  address: 1 10 bach dang
+
+- 
+  name: Hoa bí nhồi tôm cá chiên giòn
+  desc:  Cuối tuần chị em hãy thử làm món hoa bí nhồi tôm cá rồi chiên giòn cho cả nhà thưởng thức nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: 6/6.jpg
+  address: 14 nguyễn lương bằng
+
+- 
+  name: Hoa bí nhồi tôm cá chiên giòn
+  desc:  Cuối tuần chị em hãy thử làm món hoa bí nhồi tôm cá rồi chiên giòn cho cả nhà thưởng thức nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: 7/7.jpg
+  address: 15 nguyễn lương bằng
+
+- 
+  name: Hoa bí nhồi tôm cá chiên giòn
+  desc:  Cuối tuần chị em hãy thử làm món hoa bí nhồi tôm cá rồi chiên giòn cho cả nhà thưởng thức nhé!
+  processing: |+
+              12 bông hoa bí đỏ, còn nguyên nhị và cành. Nhẹ nhàng rửa sạch, tránh bị làm rách cánh hoa
+              115g tôm bóc vỏ, băm nhỏ
+              100g cá phi lê, băm nhỏ (bạn có thể thay thế bằng giò sống)
+  image: 8/8.jpg
+  address: 54 nguyễn lương bằng
 
 commend_list:
 -

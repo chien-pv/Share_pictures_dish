@@ -7,7 +7,7 @@ Category.create!(config["category_list"])
 Food.create!(config["food_list"])
 Day.create!(config["day_list"])
 params_post = config["dish_list"]
-@url="/public/uploads/dish/image/3/"
+@url="/public/uploads/dish/image/"
 # params_post["user_id"] = User.all.sample
 params_post.each do |pp|
       pp["user_id"] = User.all.sample.id

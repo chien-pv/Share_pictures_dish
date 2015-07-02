@@ -20,5 +20,16 @@ class User < ActiveRecord::Base
     # binding.pry
       User.new(name: params[:name], email: params[:email],role_id: params[:role_id],password: params[:password] )
   end
+  def islog?
+        if self.id.nil? 
+          false
+        else
+          if User.find_by_email(self.email)
+            true
+          else
+            false
+          end
+        end
+    end
 end
 

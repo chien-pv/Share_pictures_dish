@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   # def set_current_user
   #   User.current = current_user
   # end
-
+  
   def configure_permitted_parameters      
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:account_update) << :name

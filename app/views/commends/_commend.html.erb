@@ -3,7 +3,9 @@
 <% if !Commend.find_by_id(commend.id).nil? %>
   <strong><%=User.find_by_id(commend.user_id).name %>: </strong>
   <%=h commend.comment %><br>
-  <%= link_to 'Remove', dish_commend_path(@dish, commend, :format => :js),:remote => true, id: "delete", method: :delete if current_user.role_id==1 or current_user && current_user.id == commend.user_id %><br>
+  <% if current_user.present? %>
+  <%= link_to 'Remove', dish_commend_path(@dish, commend, :format => :js),:remote => true, id: "delete", method: :delete if current_user.role_id==1||current_user && current_user.id == commend.user_id %>
+  <% end %>
   <% end %>
 </div>
 </div>

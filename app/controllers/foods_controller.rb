@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = Food.all
+    @food = Food.new
   end
 
   # GET /foods/1
@@ -16,10 +17,10 @@ class FoodsController < ApplicationController
   def show
   end
 
-  # GET /foods/new
-  def new
-    @food = Food.new
-  end
+  # # GET /foods/new
+  # def new
+  #   @food = Food.new
+  # end
 
   # GET /foods/1/edit
   def edit
@@ -32,9 +33,9 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
+        format.html { redirect_to foods_url, notice: 'Food was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render :index }
       end
     end
   end
@@ -44,7 +45,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
+        format.html { redirect_to foods_url, notice: 'Food was successfully updated.' }
       else
         format.html { render :edit }
       end

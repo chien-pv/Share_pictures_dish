@@ -14,13 +14,54 @@
  *= require_tree .
  *= require_self
  */
-.post
-{
-box-shadow:1px 1px 10px  #dcdcdc;
--moz-box-shadow:1px 1px 10px  #dcdcdc;
--webkit-box-shadow:1px 1px 10px  #dcdcdc;
--goog-ms-box-shadow:1px 1px 10px  #dcdcdc;
-} 
+ .black{
+  margin-left: 16%;
+
+ }
+ #map-canvas{
+/*border-left: solid White 265px;*/
+  /*width: 80%*/
+
+ }
+ #image{
+  margin-left: 10%; 
+  width: 700px ; height: 400px;
+ }
+ .post_comment{  width: 70%;
+  margin-left: 16%;
+  margin-top: 50px;
+
+  }
+ #reviews{
+  margin-top: 30px;
+  width: 70%;
+  margin-left: 16%;
+  background: WhiteSmoke;
+  border: solid #EEEEEE 1px;
+
+ }
+ #text_comment{
+  margin-left: 3%
+ }
+ #comment{
+  margin-top: 5px;
+  width: 70%;
+  height: 250px;
+  border: solid #EEEEEE 1px;
+margin-left: 16%
+
+ }
+#botton{
+  margin-left: 5%
+}
+ #texarea_comment{
+
+margin-left: 2%;
+ width: 95%;
+  height: 170px;
+  border: solid #EEEEEE 1px;
+ }
+.gmnoprint{margin-left: 16%;}
  #map-canvas {
    height: 370px;
   

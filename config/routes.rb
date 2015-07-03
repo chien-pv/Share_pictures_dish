@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'users/index'
 
   resources :dishes do
-    resources :commends
+    resources :commends do
+    end
     get :show_comment
   end 
   get "/list_dish", to: "dishes#list_dish"
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :users
   # resources :commends
   post "commends/create", to:"commends#create" 
+
 
   post "users/create", to: "users#create"
   # The priority is based upon order of creation: first created -> highest priority.

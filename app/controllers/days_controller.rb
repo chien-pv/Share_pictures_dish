@@ -9,6 +9,7 @@ class DaysController < ApplicationController
   # GET /days.json
   def index
     @days = Day.all
+    @day = Day.new
   end
 
   # GET /days/1
@@ -17,9 +18,9 @@ class DaysController < ApplicationController
   end
 
   # GET /days/new
-  def new
-    @day = Day.new
-  end
+  # def new
+  #   @day = Day.new
+  # end
 
   # GET /days/1/edit
   def edit
@@ -32,9 +33,9 @@ class DaysController < ApplicationController
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to @day, notice: 'Day was successfully created.' }
+        format.html { redirect_to days_url, notice: 'Day was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render :index }
       end
     end
   end
@@ -44,7 +45,7 @@ class DaysController < ApplicationController
   def update
     respond_to do |format|
       if @day.update(day_params)
-        format.html { redirect_to @day, notice: 'Day was successfully updated.' }
+        format.html { redirect_to days_url, notice: 'Day was successfully updated.' }
       else
         format.html { render :edit }
       end

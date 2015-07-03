@@ -1,0 +1,12 @@
+<div id="text_comment">
+<div class="review_<%=h commend.id %>">
+<% if !Commend.find_by_id(commend.id).nil? %>
+  <strong><%=User.find_by_id(commend.user_id).name %>: </strong>
+  <%=h commend.comment %><br>
+  <%= link_to 'Remove', dish_commend_path(@dish, commend, :format => :js),:remote => true, id: "delete", method: :delete if current_user.nil?||current_user.role_id==1 or current_user && current_user.id == commend.user_id %><br>
+  <% end %>
+</div>
+</div>
+
+ 
+

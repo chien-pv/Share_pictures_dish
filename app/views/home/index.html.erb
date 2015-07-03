@@ -107,7 +107,7 @@
                             <img style="width: 100%; height: 90px" class="img-responsive" src="<%=dss.image%>" >
                         </div>
                         <div  class="media-body">
-                            <h3 style="text-align: center;" class="media-heading"><%=dss.name%></h3>
+                            <h3 style="text-align: center;" class="media-heading"> <h3><%= link_to dss.name, dish_show_comment_path(dss.id) %> </h3></h3>
                             <p > <%= truncate(dss.desc, :length => 70)%></p>
                         </div>
                     </div>

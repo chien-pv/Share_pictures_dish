@@ -1,5 +1,5 @@
-
-<%= form_for @dish, url: post_new_post_path, :html => {:multipart => true} do |f| %>
+<div style="width:45%; margin-left:30%;">
+<%= form_for @dish, url: post_new_post_path, :html => {:multipart => true}, id:"main-contact-form", class: "form-horizontal" do |f| %>
   <% if @dish.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
@@ -12,44 +12,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name,'Tên món ăn:' %><br>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-   <%= f.file_field :image %>
+  <div class="form-group">
+    <%= f.label :image, 'Hình ảnh:' %><br>
+   <%= f.file_field :image, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :desc %><br>
-    <%= f.text_area :desc %>
+  <div class="form-group">
+    <%= f.label :desc, 'Mô tả:' %><br>
+    <%= f.text_area :desc,  class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :processing %><br>
-    <%= f.text_area :processing %>
+  <div class="form-group">
+    <%= f.label :processing,'Phương pháp chế biến:' %><br>
+    <%= f.text_area :processing, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :food_id %><br>
-    <%=f.collection_select :food_id, Dish.list_foods, :id, :food_name%>
+  <div class="form-group">
+    <%= f.label :food_id, 'Thành phần chính:' %><br>
+    <%=f.collection_select :food_id, Dish.list_foods, :id, :food_name, class: "form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%=f.collection_select :category_id, Dish.list_categories, :id, :name%>
+  <div class="form-group">
+    <%= f.label :category_id, 'Loại:' %><br>
+    <%=f.collection_select :category_id, Dish.list_categories, :id, :name, class: "form-control"%>
   </div>
   <div>
-   <%= f.label :Buoi %><br>
-    <%= f.collection_check_boxes(:id, Day.all, :id, :day_name) do |b| %>
+   <%= f.label :Buoi, 'Buổi:' %><br>
+    <%= f.collection_check_boxes(:id, Day.all, :id, :day_name, class: "form-control") do |b| %>
     <%= b.label(class: "check_box") do %>
       <%= b.check_box %>
       <%= b.object.day_name %>
       <% end %>
     <% end %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit nil, :class => "btn btn-sm btn-success" %>
   </div>
 <% end %>
+</div>

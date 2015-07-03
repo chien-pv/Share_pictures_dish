@@ -1,5 +1,6 @@
+<div style="width:25%; margin-left:35%;">
 <h2>new user</h2>
-<%= form_for @users, :url =>  users_create_path do |f|%> 
+<%= form_for @users, :url =>  users_create_path, class: "form-signin" do |f|%> 
   <% if @users.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@users.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,11 +14,11 @@
   <% end %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class: "form-control" %>
   </div>
 
    <br><%= f.label :Role %><br>
@@ -28,11 +29,11 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password  %>
+    <%= f.password_field :password, class: "form-control"  %>
   </div>
 
   <div class="actions">
-    <%= f.submit "New user" %>
+    <%= f.submit "New user",class: "btn btn-primary" %>
   </div>
 <% end %>
 

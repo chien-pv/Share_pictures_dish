@@ -2,7 +2,7 @@
 
 <h1>Listing Foods</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Food name</th>
@@ -14,7 +14,7 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.food_name %></td>
-        <td><%= link_to 'Show', food %></td>
+      
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
         <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

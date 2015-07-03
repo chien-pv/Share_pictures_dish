@@ -20,7 +20,7 @@
     <% @dishes.each do |dish| %>
       <tr>
         <td><%= dish.name %></td>
-        <td><%= dish.image %></td>
+        <td><img style="width: 200px; height: 90px" class="img-responsive" src="<%=dish.image%>" ></td>
         <td><%= dish.desc %></td>
         <td><%= dish.processing %></td>
         <td><%= dish.food_id %></td>

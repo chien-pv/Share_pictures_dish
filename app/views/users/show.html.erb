@@ -1,13 +1,21 @@
-<p>
+<br> <br> <br>
+<style>
+	#show{
+		font-size: 15px
+	}
+</style>
+<div style="font-size: 15px; width:25%; margin-left:35%;">
+<p id="show">
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-<p>
+<p id="show">
    <strong>Email:</strong>
   <%= @user.email %>
 </p>
-<p>
+<p id="show">
    <strong>Role:</strong>
   <%= Role.name_role(@user.role_id)%>
 </p>
 <%= link_to 'Back', users_index_path %>
+</div>

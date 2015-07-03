@@ -1,4 +1,5 @@
-<%= form_for(@user) do |f| %>
+<div style="width:25%; margin-left:35%;">
+<%= form_for(@user,  class: "form-signin") do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -18,15 +19,15 @@
 
   <div class="field">
     <br><%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
     <br><%= f.label :email %><br>
-    <%= f.email_field :email %><br>
+    <%= f.email_field :email, class: "form-control" %><br>
   </div>
   <br><%= f.label :Role %><br>
-  <%=f.collection_select :role_id, Role.name_role_all, :id, :name%>
+  <%=f.collection_select :role_id, Role.name_role_all, :id, :name, class: "form-control"%>
   <div class="actions">
    <br>
  <br>
@@ -34,3 +35,4 @@
   </div>
 
 <% end %>
+</div>

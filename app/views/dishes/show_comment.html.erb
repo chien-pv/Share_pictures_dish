@@ -1,41 +1,89 @@
+
+<script >
+    var geocoder;
+    var map;
+    function initialize() {
+      geocoder = new google.maps.Geocoder();
+      var latlng = new google.maps.LatLng(16.071845, 108.224339);
+      var mapOptions = {
+        zoom: 15,
+        center: latlng
+      }
+      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      codeAddress();
+    }
+
+    function codeAddress() {
+      var address = document.getElementById('address').value;
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<br> <br><br>
+    <div id="panel">
+      <input id="address" type="textbox" value="<%=@dish.address%>">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div>
+  
+    <div id="map-canvas">
+
+      <script>
+      initialize();
+      </script>
+    </div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @dish.name %>
-</p>
+<div class="post">
+  <h2 style="color: #666666; font-size: 30px;"><%= @dish.name %></h2>
 
-<p>
   <strong>Image:</strong>
   <%= image_tag(@dish.image_url, :width => 600) if @dish.image.present? %>
 </p>
 
 <p>
-  <strong>Desc:</strong>
+  <strong>Mô tả:</strong>
   <%= @dish.desc %>
 </p>
 
 <p>
-  <strong>Processing:</strong>
+  <strong>Phương pháp:</strong>
   <%= @dish.processing %>
 </p>
 
 <p>
-  <strong>Food:</strong>
-  <%= @dish.food_id %>
+  <strong>Thành phần chính:</strong>
+  <%= Food.find_by_id(@dish.food_id).food_name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @dish.category_id %>
+  <strong>Loại:</strong>
+  <%= Category.find_by_id(@dish.category_id).name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Địa Chỉ Gợi Ý:</strong>
   <%= @dish.address %>
 </p>
-
-<h2>Comments</h2>
+</div>
+ <div >
+    <div >
+        <h3 >Comments</h3>
+      </div>
+      
 <% @dish.commends.each do |comment| %>
   <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
   <%= comment.comment %><br>
@@ -45,14 +93,20 @@
 <% end %>
 <% if current_user.present?%>
   <h2>Add a comment:</h2>
+    <div class="widget-area no-padding blank">
+     <div class="status-upload">
    <%= form_for([@dish, @dish.commends.build]) do |f| %>
     <p>
       <%= f.label :comment%><br>
       <%= f.text_area :comment %>
     </p>   
-    <p><%= f.submit %></p>
+
+    <p><%= f.submit class: "btn btn-success green" %></p>
   <% end %>
+  </div>
+  </div>
 <% else%>
   <p><%= link_to "Please sign in to comment!", new_user_session_path%><p>
 <% end%>
 <%= link_to 'Back', dishes_path %>
+</div>

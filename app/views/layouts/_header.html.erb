@@ -19,7 +19,9 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->     
+    <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <link rel="shortcut icon" href="<%= asset_path "ico/favicon.ico" %>">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href=" <%= asset_path "ico/apple-touch-icon-144-precomposed.png" %>">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href=" <%= asset_path "ico/apple-touch-icon-114-precomposed.png" %>">
@@ -79,7 +81,7 @@
                     <%=image_tag("logo.png")%></a>
                 </div>
 				
-                <div class="collapse navbar-collapse navbar-right">
+                <div id="menu" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><%= link_to 'Trang Chủ', root_path %></li>
                         <li><%= link_to 'Thêm món ăn', post_path %></li>

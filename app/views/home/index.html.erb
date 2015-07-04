@@ -18,7 +18,7 @@
                             <h2>Bữa sáng nhẹ nhàng</h2>
                             <div style="float:left ;   margin-left: -80px;">
                               <br><br>
-                          		  <h3><%=Dish.thuc_don[:sang][:name]%></h3>
+                              <h3><%= link_to Dish.thuc_don[:sang][:name], dish_show_comment_path(Dish.thuc_don[:sang][:id]) %> </h3>
                            </div>
                            	  
                         </div>
@@ -33,7 +33,7 @@
                             <h2>Bữa trưa đơn giản</h2>
                             <div style="float:left;margin-left: -80px;">
                             <br><br>
-                           <h3><%=mon[:trua][0][:name]%></h3>
+                           <h3><%= link_to mon[:trua][0][:name], dish_show_comment_path(mon[:trua][0][:id]) %> </h3>
                            <h3><%=mon[:trua][1][:name]%></h3>
                            <h3><%=mon[:trua][2][:name]%></h3>
                            </div>

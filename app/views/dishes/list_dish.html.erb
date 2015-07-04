@@ -2,12 +2,9 @@
  <section id="portfolio">
         <div class="container">
             <div class="center">
-               <h2>Portfolio</h2>
-               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+               <h2>Danh Mục Tất Cả Món Ăn </h2>
             </div>
          
-
-
             <ul class="portfolio-filter text-center">
                 <li><a class="btn btn-default active" href="#" data-filter="*">All Dish</a></li>
                 <li><a class="btn btn-default" href="#" data-filter=".1">Thịt</a></li>
@@ -20,7 +17,13 @@
                 <input id="inputsearch" name="q" type="text" size="15" placeholder="Type here..." />
                 <input id="button-submit" type="submit" value="Search" />
                 </form>
-                <br>
+                  <div class="form-group">
+                     <%= form_tag '/list_dish',id: "form_category",method: "get", multipart: true do %>
+                      <label id="label_category">Loại:</label> 
+                      <%= select_tag "category_id", options_from_collection_for_select(Dish.list_categories, "id", "name", params[:category_id].to_i), onchange: 'this.form.submit()', id: "section_category", :include_blank => 'All categories' %>
+                      </div>
+                    <% end %>
+            
             <div class="row">
             <div class="portfolio-items">
              <% @dishes.each do |dss|%>

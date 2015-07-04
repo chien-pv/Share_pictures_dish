@@ -14,10 +14,12 @@ class DishesController < ApplicationController
   end
 
   def list_dish
-  if params[:q].blank?
+  if params[:q].blank?&&params[:category_id].blank?
     @dishes = Dish.all
-  else 
+  elsif params[:category_id].blank?   
      @dishes = Dish.where("name LIKE '%#{params[:q]}%'")
+  else
+    @dishes = Dish.where("category_id = '#{params[:category_id]}'")
   end
   @dishes=@dishes.paginate(:page => params[:page], :per_page  => 12)
   end
@@ -50,7 +52,7 @@ class DishesController < ApplicationController
             DishsDay.create(day_id: fa, dish_id: @dish.id)
           end
         end
-        format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
+        format.html { redirect_to dishes_url, notice: 'Dish was successfully created.' }
       else
         format.html { render :new }
       end
@@ -78,7 +80,7 @@ class DishesController < ApplicationController
   def update
     respond_to do |format|
       if @dish.update(dish_params)
-        format.html { redirect_to @dish, notice: 'Dish was successfully updated.' }
+        format.html { redirect_to dishes_url, notice: 'Dish was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -102,6 +104,7 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
+      # binding.pry
       params.require(:dish).permit(:name, :image, :desc, :processing, :food_id, :id, :category_id, :address)
     end
 end

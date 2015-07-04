@@ -14,6 +14,36 @@
  *= require_tree .
  *= require_self
  */
+ #form_category{
+  border: solid #EEEEEE 1px;
+  height: 50px;
+  width: 217px;
+
+ }
+  #section_category option{
+
+      text-align: center;
+
+  }
+ #section_category{
+  margin-top: 7%;
+  background: WhiteSmoke;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: verdana, arial, helvetica, sans-serif;
+ }
+ #label_category{
+  margin-top: 7%;
+  margin-left: 10%;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: verdana, arial, helvetica, sans-serif;
+  margin-right: 10px;
+
+ }
+ .form-group{
+
+ }
  .black{
   margin-left: 16%;
 
@@ -117,7 +147,7 @@ input:focus::-moz-placeholder {
 }
 
 #button-submit {
-    background: #00FF66;
+    background: LightSlateGray;
     border-width: 0px;
     padding: 9px 0px;
     width: 43%%;
@@ -125,6 +155,7 @@ input:focus::-moz-placeholder {
     font: bold 12px Arial, Helvetica;
     color: #fff;
     text-shadow: 0 1px 0 #555;
+    font-size: 15px;
 }
 
 #button-submit:hover {

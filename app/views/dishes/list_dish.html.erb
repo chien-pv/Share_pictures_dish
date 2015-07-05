@@ -7,11 +7,9 @@
          
             <ul class="portfolio-filter text-center">
                 <li><a class="btn btn-default active" href="#" data-filter="*">All Dish</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".1">Thịt</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".2">Cá</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".3">Rau</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".4">Hải Sản</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".5">Trứng</a></li>
+               <%Food.all.each do |food|%>
+                <li><a class="btn btn-default" href="#" data-filter=".<%=food.id%>"><%=food.food_name%></a></li>
+              <%end%>
             </ul><!--/#portfolio-filter-->
                 <form id="searchbox" method="get" action="/list_dish">
                 <input id="inputsearch" name="q" type="text" size="15" placeholder="Type here..." />

@@ -18,16 +18,16 @@ params_post.each do |pp|
 Dish.create!(params_post)
 # binding.pry
 # binding.pry
-dish_day_list = [
-  [Dish.all.sample.id, Day.all.sample.id],
-  [Dish.all.sample.id, Day.all.sample.id]
-]
-dish_day_list.each do |dishid, dayid|
-  DishsDay.create(
-            dish_id: dishid,
-            day_id: dayid
-    )
-end
+# dish_day_list = [
+#   [Dish.all.sample.id, Day.all.sample.id],
+#   [Dish.all.sample.id, Day.all.sample.id]
+# ]
+# dish_day_list.each do |dishid, dayid|
+DishsDay.create(config["dish_day_list"])
+            # dish_id: dishid,
+            # day_id: dayid
+    # )
+# end
 params_command = config["commend_list"]
 params_command.each do |pm|
   pm["user_id"] = User.all.sample.id

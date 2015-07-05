@@ -42,6 +42,17 @@
 </div>
 
 <% if current_user.present?%>
+  <%if Like.find_by(like: 1, user_id: current_user.id, dish_id: @dish.id).nil?%>
+  <div class="Like_dish">
+  <%= link_to 'Thích', dish_like_like_path(@dish.id, current_user.id, :format => :js), id: "like", :remote => true %>
+  </div>
+
+  <% else %>
+  <div class="Like_dish" id="Like_dishdd">
+  <%= link_to 'Liked', :remote => true %>
+  </div>
+   <% end %>
+  <div id="count"><%= Like.where(dish_id: @dish.id).count %></div>
   <div id="comment">
    <%= form_for([@dish, @dish.commends.build]) do |f| %>
     <p>
@@ -53,7 +64,7 @@
   <% end %>
   </div>
 <% else%>
-  <p><%= link_to "Please sign in to comment!", new_user_session_path%><p>
+  <p class="pleas"><%= link_to "Please sign in to comment and like!", new_user_session_path, class: "text_pleas"%><p>
 <% end%>
 <div class="black">
 <%= link_to 'Back', dishes_path %>

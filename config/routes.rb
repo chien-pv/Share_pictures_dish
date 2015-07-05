@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   get 'users/index'
 
   resources :dishes do
-    resources :commends do
-    end
+    resources :commends
     get :show_comment
-  end 
+    resources :likes do
+      get :like
+    end
+  end
+  get "/list_top" , to: "dishes#list_dish_top"
   get "/list_dish", to: "dishes#list_dish"
   get "/post", to: "dishes#post_dish"
   post "/post/new_post", to: "dishes#create_post"

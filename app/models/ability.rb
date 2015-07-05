@@ -37,9 +37,11 @@ class Ability
         can :show_comment, :all
         can :create_post, :all
         can :list_dish, :all
+        can :list_dish_top, :all
     else
         can :show_comment, :all
         can :list_dish, :all
+        can :list_dish_top, :all
         # cannot :new , :user_id => user.id
 
     end

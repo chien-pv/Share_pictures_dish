@@ -25,7 +25,7 @@
      $.post(this.action, $(this).serialize(), null, "script");
      return false;
    })
-   return this;
+   // return this;
  };
 
  $(document).ready(function() {

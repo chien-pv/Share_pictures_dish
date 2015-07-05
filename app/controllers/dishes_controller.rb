@@ -13,15 +13,19 @@ class DishesController < ApplicationController
     @dishes=@dishes.paginate(:page => params[:page], :per_page  => 5)
   end
 
-  def list_dish
-  if params[:q].blank?&&params[:category_id].blank?
-    @dishes = Dish.all
-  elsif params[:category_id].blank?   
-     @dishes = Dish.where("name LIKE '%#{params[:q]}%'")
-  else
-    @dishes = Dish.where("category_id = '#{params[:category_id]}'")
+  def list_dish_top
+    # binding.pry
+    @dishes= Dish.top
   end
-  @dishes=@dishes.paginate(:page => params[:page], :per_page  => 12)
+  def list_dish
+    if params[:q].blank?&&params[:category_id].blank?
+      @dishes = Dish.all
+    elsif params[:category_id].blank?   
+       @dishes = Dish.where("name LIKE '%#{params[:q]}%'")
+    else
+      @dishes = Dish.where("category_id = '#{params[:category_id]}'")
+    end
+    @dishes=@dishes.paginate(:page => params[:page], :per_page  => 12)
   end
   def show_comment
     @dish = Dish.find(params[:dish_id])

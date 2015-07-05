@@ -216,3 +216,24 @@ commend_list:
 
 -
   comment: That tuyet voi!
+
+dish_day_list:
+-
+  dish_id: 1
+  day_id: 1
+
+-
+  dish_id: 2
+  day_id: 2
+
+-
+  dish_id: 5
+  day_id: 3
+
+-
+  dish_id: 6
+  day_id: 4
+
+-
+  dish_id: 7
+  day_id: 5
